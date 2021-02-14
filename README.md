@@ -1,2 +1,2 @@
 # Arduino Projekte
-Code zu Arduino-Projekten
+Meine Versionen aller Projekte aus dem Arduino Starter Kit.
