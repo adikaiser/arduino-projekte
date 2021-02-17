@@ -3,7 +3,7 @@
 int switchstate = 0;
 
 void setup() {
-  // Mit der Fkt. pinMode() konfiguriert man, ob die digitalen Pins Ein oder Ausgänge sind.
+  // Mit der Fkt. pinMode() konfiguriert man, ob die digitalen Pins Ein- oder Ausgänge sind.
   // Die LEDs an den Pins 3-5 werden als Output deklariert. 
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
@@ -15,28 +15,28 @@ void setup() {
 
 void loop() {
 
-  // read the value of the switch
-  // digitalRead() checks to see if there is voltage on the pin or not
+  // Mit der Fkt digitalRead() wird der Wert des Schalters ausgelesen. 
+  // digitalRead() prüft, ob am Pin 2 Spannung anliegt oder nicht. 
   switchstate = digitalRead(2);
 
-  // if the button is not pressed turn on the green LED and off the red LEDs
+  // Wenn der Schalter nicht gedrückt wird, sollte die grüne LED aufleuchten
+  // und die roten LEDs aus sein. 
   if (switchstate == LOW) {
-    digitalWrite(3, HIGH); // turn the green LED on pin 3 on
-    digitalWrite(4, LOW);  // turn the red LED on pin 4 off
-    digitalWrite(5, LOW);  // turn the red LED on pin 5 off
+    digitalWrite(3, HIGH); // Grüne LED an Pin 3 anschalten 
+    digitalWrite(4, LOW);  // Rote LED an Pin 4 ausschalten
+    digitalWrite(5, LOW);  // Rote LED an Pin 5 ausschalten
   }
-  // this else is part of the above if() statement.
-  // if the switch is not LOW (the button is pressed) turn off the green LED and
-  // blink alternatively the red LEDs
+  // Sonst, wenn der Schalter gedrückt wird, soll die grüne LED ausgeschaltet werden
+  // und die beiden roten LEDs mit einer Viertelsekunde Verzögerung abwechselnd aufleuchten.  
   else {
-    digitalWrite(3, LOW);  // turn the green LED on pin 3 off
-    digitalWrite(4, LOW);  // turn the red LED on pin 4 off
-    digitalWrite(5, HIGH); // turn the red LED on pin 5 on
-    // wait for a quarter second before changing the light
+    digitalWrite(3, LOW);  // Grüne LED an Pin 3 ausschalten
+    digitalWrite(4, LOW);  // Rote LED an Pin 4 ausschalten 
+    digitalWrite(5, HIGH); // Rote LED an Pin 5 anschalten 
+    // Eine Viertelsekunde warten, bevor auf die andere LED gewechselt wird
     delay(250);
-    digitalWrite(4, HIGH); // turn the red LED on pin 4 on
-    digitalWrite(5, LOW);  // turn the red LED on pin 5 off
-    // wait for a quarter second before changing the light
+    digitalWrite(4, HIGH); // Rote LED an Pin 4 anschalten 
+    digitalWrite(5, LOW);  // Rote LED an Pin 5 ausschalten 
+    // Wieder eine Viertelsekunde warten, bevor auf die andere LED gewechselt wird
     delay(250);
   }
 }
