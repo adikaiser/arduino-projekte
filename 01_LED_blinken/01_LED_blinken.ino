@@ -1,6 +1,6 @@
 // Sobald man das Arduino mit Strom versorgt oder reset drückt wird die setup Fkt. einmal ausgeführt
 void setup() {
-  // LED_BUILTIN wird als output initialisiert
+  // LED_BUILTIN wird als Ausgang initialisiert
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
